@@ -5,16 +5,17 @@
 
 // Variables
 
-var fastFood = 1,
-	sitDownRestauraunt = 2;
+var cash = 30;
+var waitTime = 30;
 	
 var fastFoodArray = ["Mcdonald's", "Taco Bell", "Burger King", "Wendy's", "Rally's"];
 
-var sitDownRestaurauntArray = ["Pizza Hut", "Applebee's", "Tony's", "Don Pablo's", "Bennigan's",];
+var sitDownRestaurauntArray = ["Pizza Hut", "Applebee's", "Tony's", "Don Pablo's", "Bennigan's"];
+var arrayItemNumber = "Bennigan's";
 
-var question1 = "Do you want to go out for dinner tonight?",
-	question2 = "Are you in the mood for fast food or a sit down resturaunt?";
-	
+var question1 = " Do you want to go out for dinner tonight?"
+
+
 	
 	
 // function asks if I have money. If so, we can go out. If not, I cook.
@@ -23,7 +24,7 @@ var doIHaveMoney = function (money)
 {
 	if (money === true)	
 	{
-		console.log("Lets go out to eat!");
+		console.log("We can go out to eat");
 	}
 	else
 	{
@@ -32,31 +33,32 @@ var doIHaveMoney = function (money)
 }
  
 //This function determines if she wants to go out to dinner.
-
-var doYouWantTo = function (question)
+	
+var doYouWantTo = function (answer)
 {
  	var result;
-	var goOut = true;
-	if (goOut = question)
+	if (answer === true)
 	{
 		result = true;
+		console.log("Yes!");
 	}
 	else
 	{
 		result = false;
+		console.log("No, Thank you.");
 	}
-	return outcome;
+	return result;
 }
  
  // function decides if we eat at a fast food or sit down restaurant.
- // If i have $30 or more we will eat at sit down. Less than 30 will be fast food.
+ // I have 30 dollars. if a sit down will cost more than that, we will need to eat fast food.
  
-var whereToEat = function (howMuch)
+var cost = function (howMuch)
 {
  	var result;
-	var sitDown = 26;
+	var sitDown = 30;
 	
-	if (sitDown <= howMuch)
+	if (sitDown <= cash)
 	{
 		result = true;
 	}
@@ -64,7 +66,7 @@ var whereToEat = function (howMuch)
 	{
 		result = false;
 	}
-	return outcome;
+	return result;
 }
 
  // function decides if we have are willing to wait 30 minutes or less to be seated at a restaurant
@@ -83,16 +85,52 @@ var wait = function (howLong)
 	{
 		result = false;
 	}
-	return outcome;
+	return result;
 }
 
  // This is the array function. it decides which place we eat at.
-var placesWeCanEat = function (restaurant, chosenOne)
-{
+var placesWeCanEat = function (sitDownRestaurauntArray, arrayItemNumber)
+	
+{	console.log("Places we can go");
 	for (i = 0; i < 5; i++)
-	{
-		console.log(restaurants[i]);
+	{	
+		console.log(sitDownRestaurauntArray[i]);
 	}	
-	console.log("We will go to");
-	return restaurants[chosenONE];
-}		
+	
+	return sitDownRestaurauntArray,[arrayItemNumber];
+}	
+
+// this is where I make everything function.
+console.log("If I have money" + " we can go out to eat.");
+
+doIHaveMoney(true);
+
+console.log("I have 30 dollars");
+console.log("Hey Ashley?" + question1);
+
+doYouWantTo(true)
+	
+console.log("We need to decide where we want to eat.");
+	
+	if (cost(cash) === true)
+	{
+		console.log("We will eat at a sit down restaurant");
+	}	
+	else
+	{
+		console.log("We will eat at fast food");
+	}
+	
+console.log("Are we going to stay if there is less than 30 minute wait?");
+		
+	if (wait(waitTime) === true)	
+	{
+		console.log("Yes.");
+	}
+	else
+	{
+		console.log("We will try another restaurant");	
+	}
+console.log(placesWeCanEat(sitDownRestaurauntArray, arrayItemNumber) + ( " is where we are having dinner"));
+	
+	
