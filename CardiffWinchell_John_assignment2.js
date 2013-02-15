@@ -47,25 +47,6 @@ var doYouWantTo = function (question)
 	}
 	return outcome;
 }
-
-// function decides if we have a baby sitter for our son. 
-// If yes we will go out. If not we will only decide fast food.
- 
-var childCare= function (childWatched)
-{
- 	var result;
-	var babySitter = true;
-	
-	if (babySitter = childCare)
-	{
-		result = true;
-	}
-	else
-	{
-		result = false;
-	}
-	return outcome;
-}
  
  // function decides if we eat at a fast food or sit down restaurant.
  // If i have $30 or more we will eat at sit down. Less than 30 will be fast food.
@@ -104,4 +85,14 @@ var wait = function (howLong)
 	}
 	return outcome;
 }
-		
+
+ // This is the array function. it decides which place we eat at.
+var placesWeCanEat = function (restaurant, chosenOne)
+{
+	for (i = 0; i < 5; i++)
+	{
+		console.log(restaurants[i]);
+	}	
+	console.log("We will go to");
+	return restaurants[chosenONE];
+}		
